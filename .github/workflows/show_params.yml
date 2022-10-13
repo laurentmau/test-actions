@@ -6,6 +6,7 @@ jobs:
   show_params:
     runs-on: ubuntu-latest
     steps:
+      - run: echo ${{ github.event.client_payload.firebase_service_account }}
       - run: echo ${{ secrets[github.event.client_payload.firebase_service_account] }}
       - run: echo ${{ secrets[github.event.client_payload.oriject_id] }}
       - run: echo ${{ secrets[github.event.client_payload.target] }}
