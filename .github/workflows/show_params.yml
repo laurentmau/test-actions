@@ -7,5 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - env:
-          MESSAGE: ${{ github.event.client_payload.FIREBASE_SERVICE_ACCOUNT_UX_IUM }}
+          MESSAGE: ${{ github.event.client_payload.firebase_service_account }}
         run: echo $MESSAGE
