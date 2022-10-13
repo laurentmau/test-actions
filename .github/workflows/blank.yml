@@ -1,0 +1,11 @@
+on:
+  repository_dispatch:
+    types: [test_result]
+
+jobs:
+  show_params:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          MESSAGE: ${{ github.event.client_payload.message }}
+        run: echo $MESSAGE
