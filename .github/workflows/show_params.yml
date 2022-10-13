@@ -7,5 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - env:
-          MESSAGE: ${{ github.event.client_payload.firebase_service_account }}
-        run: echo $MESSAGE
+          FIREBASESERVICEACCOUNT: ${{ secrets[github.event.client_payload.firebase_service_account] }}
+          PROJECTID: ${{ secrets[github.event.client_payload.oriject_id] }}
+          TARGET: ${{ secrets[github.event.client_payload.target] }}
+      - run: echo $FIREBASESERVICEACCOUNT
+      - run: echo $PROJECTID
+      - run: echo $TARGET
